@@ -20,7 +20,7 @@ public class WorkoutSession {
 	
 	@ManyToOne
 	@JoinColumn (name = "user_id", nullable = false)
-	private Integer user_id;
+	private UserApp user;
 	
 	@Column (nullable = false)
 	private Date session_date;
@@ -33,8 +33,7 @@ public class WorkoutSession {
 	
 	@ManyToOne
 	@JoinColumn (name = "exercise_id", nullable = false)	
-	@Column (nullable = false)
-	private Integer exercise_id;
+	private Exercise exercise;
 	
 	
 	

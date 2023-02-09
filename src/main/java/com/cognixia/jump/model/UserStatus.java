@@ -21,8 +21,8 @@ public class UserStatus {
 	
 	// need foreign key / entity relationship tag here	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="user_id", nullable=false, unique=true)
-	private Integer user_id;
+	@JoinColumn(name="user_id", nullable=false)
+	private UserApp user;
 	
 	@Column (nullable = false)
 	private Integer height;
