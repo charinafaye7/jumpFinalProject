@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class User implements Serializable{
+public class UserApp implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -22,19 +22,21 @@ public class User implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer user_id;
 	
 	@Column( nullable = false )
-	private String fname;
+	private String f_name;
+	
+	@Column( nullable = false )
+	private String l_name;
 	
 	// @Enumerated allows us to use enums to only allow certain values through, 
 	// enums will be stored as strings/varchars in our DB
 	@Enumerated(EnumType.STRING)
 	@Column( nullable = false )
-	private Role role;
+	private Role roles;
 	
-	@Column( nullable = false )
-	private String lname;
+	
 	
 	// unique and not null
 	@Column( unique = true, nullable = false )
@@ -43,45 +45,45 @@ public class User implements Serializable{
 	
 	@Column( nullable = false )
 	@NotBlank
-	private String password;
+	private String user_pwd;
 	
 	@Column( columnDefinition = "boolean default true" )
 	private boolean enabled; // true or false if the user is enabled
 	
-	public User() {
+	public UserApp() {
 
 	}
 
 	public Integer getId() {
-		return id;
+		return user_id;
 	}
 
 	public void setId(Integer id) {
-		this.id = id;
+		this.user_id = id;
 	}
 
 	public String getFname() {
-		return fname;
+		return f_name;
 	}
 
 	public void setFname(String fname) {
-		this.fname = fname;
+		this.f_name = fname;
 	}
 
 	public Role getRole() {
-		return role;
+		return roles;
 	}
 
 	public void setRole(Role role) {
-		this.role = role;
+		this.roles = role;
 	}
 
 	public String getLname() {
-		return lname;
+		return l_name;
 	}
 
 	public void setLname(String lname) {
-		this.lname = lname;
+		this.l_name = lname;
 	}
 
 	public String getUsername() {
@@ -93,17 +95,17 @@ public class User implements Serializable{
 	}
 
 	public String getPassword() {
-		return password;
+		return user_pwd;
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.user_pwd = password;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", fname=" + fname + ", role=" + role + ", lname=" + lname + ", username=" + username
-				+ ", password=" + password + ", enabled=" + enabled + "]";
+		return "User [id=" + user_id + ", fname=" + f_name + ", role=" + roles + ", lname=" + l_name + ", username=" + username
+				+ ", password=" + user_pwd + ", enabled=" + enabled + "]";
 	}
 
 	

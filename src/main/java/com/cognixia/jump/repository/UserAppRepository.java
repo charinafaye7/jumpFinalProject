@@ -5,10 +5,10 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cognixia.jump.model.User;
+import com.cognixia.jump.model.UserApp;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer>{
+public interface UserAppRepository extends JpaRepository<UserApp, Integer>{
 	
 	// insert queries here
 
