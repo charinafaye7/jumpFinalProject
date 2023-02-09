@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class WorkoutSession {
@@ -16,9 +18,8 @@ public class WorkoutSession {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer session_id;
 	
-	
-	// need foreign key / entity relationship tag here	
-	@Column (nullable = false)
+	@ManyToOne
+	@JoinColumn (name = "user_id", nullable = false)
 	private Integer user_id;
 	
 	@Column (nullable = false)
@@ -30,7 +31,8 @@ public class WorkoutSession {
 	@Column (nullable = false)
 	private Integer calories;
 	
-	// need foreign key / entity relationship tag here	
+	@ManyToOne
+	@JoinColumn (name = "exercise_id", nullable = false)	
 	@Column (nullable = false)
 	private Integer exercise_id;
 	

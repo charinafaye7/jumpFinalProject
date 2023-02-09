@@ -2,11 +2,14 @@ package com.cognixia.jump.model;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class UserStatus {
@@ -17,7 +20,8 @@ public class UserStatus {
 	
 	
 	// need foreign key / entity relationship tag here	
-	@Column (nullable = false)
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="user_id", nullable=false, unique=true)
 	private Integer user_id;
 	
 	@Column (nullable = false)
