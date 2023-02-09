@@ -108,9 +108,7 @@ public class UserApp implements Serializable{
 				+ ", password=" + user_pwd + ", enabled=" + enabled + "]";
 	}
 
-	
-	
-	
 }
+
 
 

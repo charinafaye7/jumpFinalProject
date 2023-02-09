@@ -32,11 +32,7 @@ public class WorkoutSession {
 	private Integer calories;
 	
 	@ManyToOne
-	@JoinColumn (name = "exercise_id", nullable = false)	
+	@JoinColumn (name = "exercise_id", nullable = false)
 	private Exercise exercise;
 	
-	
-	
-	
-
 }
