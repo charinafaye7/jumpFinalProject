@@ -9,6 +9,8 @@ import com.cognixia.jump.model.UserApp;
 
 @Repository
 public interface UserAppRepository extends JpaRepository<UserApp, Integer>{
+
+	Optional<UserApp> findByUsername(String username);
 	
 	// insert queries here
 

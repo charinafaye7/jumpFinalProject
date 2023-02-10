@@ -55,6 +55,16 @@ public class UserApp implements Serializable{
 	}
 	
 
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+
 	public Integer getUser_id() {
 		return user_id;
 	}
@@ -133,7 +143,5 @@ public class UserApp implements Serializable{
 				+ ", password=" + user_pwd + ", enabled=" + enabled + "]";
 	}
 
+
 }
-
-
-
