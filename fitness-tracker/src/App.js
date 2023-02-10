@@ -16,7 +16,7 @@ function App() {
       <Header/>
 
       <Routes>
-      {/* <Route path="/" element={ <Home/> } exact /> */}
+      <Route path="/" element={ <Home/> } exact />
       <Route path="/login" element={ <Login/> } />
       <Route path="/menu" element={ <Menu/> } />
       {/* <Route path="/add" element={ <Add/> } /> */}
