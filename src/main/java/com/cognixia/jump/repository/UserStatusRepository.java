@@ -13,3 +13,4 @@ public interface UserStatusRepository extends JpaRepository<UserStatus, Integer>
 	// insert queries here
 
 }
+
