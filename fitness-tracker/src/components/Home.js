@@ -1,5 +1,5 @@
 import React from 'react';
-import myproducts from '../images/myproducts.jpg';
+// import myproducts from '../images/myproducts.jpg';
 
 const Home = () => {
     return (
@@ -14,11 +14,11 @@ const Home = () => {
                 alt='Products Image'
                 style={{ width: "100%"}}
                 />
-
+{/* 
             <img src={myproducts} 
                 alt='Other Products' 
                 style={{ width: "100%" }}
-                />
+                /> */}
 
         </div>
     );
