@@ -26,20 +26,19 @@ const SessionView = () => {
                         <th>Duration</th>
                         <th>Session Date</th>
                         <th>Exercise</th>
-                        <th>User Id</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     {
                         sessionList.map( s =>  
-                                    <tr key={s.id}>
-                                        <td>{s.seshId}</td>
-                                        <td>{s.cal}</td>
-                                        <td>{s.dur}</td>
-                                        <td>{s.date}</td>
-                                        <td>{s.exer}</td>
-                                        <td>{s.userId}</td>
+                                    <tr key={s.session_id}>
+
+                                        <td>{s.session_id}</td>
+                                        <td>{s.calories}</td>
+                                        <td>{s.duration}</td>
+                                        <td>{s.session_date}</td>
+                                        <td>{s.exercise.exercise_name}</td>
                                         <td>
                                             <button className="btn btn-danger">
                                                 Delete
