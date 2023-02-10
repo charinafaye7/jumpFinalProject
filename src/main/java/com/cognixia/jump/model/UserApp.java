@@ -53,58 +53,83 @@ public class UserApp implements Serializable{
 	public UserApp() {
 
 	}
+	
 
-	public Integer getId() {
+	public Integer getUser_id() {
 		return user_id;
 	}
 
-	public void setId(Integer id) {
-		this.user_id = id;
+
+
+	public void setUser_id(Integer user_id) {
+		this.user_id = user_id;
 	}
 
-	public String getFname() {
+
+
+	public String getF_name() {
 		return f_name;
 	}
 
-	public void setFname(String fname) {
-		this.f_name = fname;
+
+
+	public void setF_name(String f_name) {
+		this.f_name = f_name;
 	}
 
-	public Role getRole() {
-		return roles;
-	}
 
-	public void setRole(Role role) {
-		this.roles = role;
-	}
 
-	public String getLname() {
+	public String getL_name() {
 		return l_name;
 	}
 
-	public void setLname(String lname) {
-		this.l_name = lname;
+
+
+	public void setL_name(String l_name) {
+		this.l_name = l_name;
 	}
+
+
+
+	public Role getRoles() {
+		return roles;
+	}
+
+
+
+	public void setRoles(Role roles) {
+		this.roles = roles;
+	}
+
+
 
 	public String getUsername() {
 		return username;
 	}
 
+
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
-	public String getPassword() {
+
+
+	public String getUser_pwd() {
 		return user_pwd;
 	}
 
-	public void setPassword(String password) {
-		this.user_pwd = password;
+
+
+	public void setUser_pwd(String user_pwd) {
+		this.user_pwd = user_pwd;
 	}
+
+
 
 	@Override
 	public String toString() {
-		return "User [id=" + user_id + ", fname=" + f_name + ", role=" + roles + ", lname=" + l_name + ", username=" + username
+		return "User [id=" + user_id + ", f_name=" + f_name + ", roles=" + roles + ", l_name=" + l_name + ", username=" + username
 				+ ", password=" + user_pwd + ", enabled=" + enabled + "]";
 	}
 

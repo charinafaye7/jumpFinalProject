@@ -35,4 +35,60 @@ public class WorkoutSession {
 	@JoinColumn (name = "exercise_id", nullable = false)
 	private Exercise exercise;
 	
+	@Override
+	public String toString() {
+		return "WorkoutSession [session_id=" + session_id + ", user=" + user + ", session_date=" + session_date
+				+ ", duration=" + duration + ", calories=" + calories + ", exercise=" + exercise + "]";
+	}
+
+	public Integer getSession_id() {
+		return session_id;
+	}
+
+	public void setSession_id(Integer session_id) {
+		this.session_id = session_id;
+	}
+
+	public UserApp getUser() {
+		return user;
+	}
+
+	public void setUser(UserApp user) {
+		this.user = user;
+	}
+
+	public Date getSession_date() {
+		return session_date;
+	}
+
+	public void setSession_date(Date session_date) {
+		this.session_date = session_date;
+	}
+
+	public Time getDuration() {
+		return duration;
+	}
+
+	public void setDuration(Time duration) {
+		this.duration = duration;
+	}
+
+	public Integer getCalories() {
+		return calories;
+	}
+
+	public void setCalories(Integer calories) {
+		this.calories = calories;
+	}
+
+	public Exercise getExercise() {
+		return exercise;
+	}
+
+	public void setExercise(Exercise exercise) {
+		this.exercise = exercise;
+	}
+
+	
+	
 }

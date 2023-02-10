@@ -10,29 +10,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cognixia.jump.model.UserApp;
-import com.cognixia.jump.repository.UserAppRepository;
+import com.cognixia.jump.model.WorkoutSession;
+import com.cognixia.jump.repository.WorkoutSessionRepository;
 
 
 @RequestMapping("/api")
 @RestController
-public class UserAppController {
+public class WorkoutSessionController {
 	@Autowired
-	UserAppRepository repo;
+	WorkoutSessionRepository repo;
 	
-	@GetMapping("/users")
-	public List<UserApp> getUsers() {
+	@GetMapping("/workout")
+	public List<WorkoutSession> getWorkoutSessions() {
 		return repo.findAll();
 	}
 	
-	@PostMapping("/user")
-	public ResponseEntity<UserApp> addUser(@RequestBody UserApp user) {
+	@PostMapping("/workout")
+	public ResponseEntity<WorkoutSession> addUser(@RequestBody WorkoutSession workoutSession) {
 		
-		System.out.println(user);
+		System.out.println(workoutSession);
 		
-		user.setUser_id(-1);
+		workoutSession.setSession_id(-1);
 		
-		UserApp created = repo.save(user);
+		WorkoutSession created = repo.save(workoutSession);
 		
 		return ResponseEntity.status(201).body(created);
 	}
@@ -42,8 +42,3 @@ public class UserAppController {
 	
 	
 }
-
-
-
-
-

@@ -11,28 +11,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cognixia.jump.model.UserApp;
-import com.cognixia.jump.repository.UserAppRepository;
-
+import com.cognixia.jump.model.UserStatus;
+import com.cognixia.jump.repository.UserStatusRepository;
 
 @RequestMapping("/api")
 @RestController
-public class UserAppController {
+public class UserStatusController {
 	@Autowired
-	UserAppRepository repo;
+	UserStatusRepository repo;
 	
-	@GetMapping("/users")
-	public List<UserApp> getUsers() {
+	@GetMapping("/status")
+	public List<UserStatus> getStatus() {
 		return repo.findAll();
 	}
 	
-	@PostMapping("/user")
-	public ResponseEntity<UserApp> addUser(@RequestBody UserApp user) {
+	@PostMapping("/status")
+	public ResponseEntity<UserStatus> addStatus(@RequestBody UserStatus status) {
 		
-		System.out.println(user);
+		System.out.println(status);
 		
-		user.setUser_id(-1);
+		status.setStatus_id(-1);
 		
-		UserApp created = repo.save(user);
+		UserStatus created = repo.save(status);
 		
 		return ResponseEntity.status(201).body(created);
 	}
@@ -42,6 +42,8 @@ public class UserAppController {
 	
 	
 }
+
+
 
 
 
