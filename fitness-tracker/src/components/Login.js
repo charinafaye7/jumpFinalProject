@@ -12,12 +12,12 @@ return(
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username"/>
                 <label for="floatingInput">Email address</label>
             </div>
 
             <div class="form-floating w-100">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"/>
                 <label for="floatingPassword">Password</label>
             </div>
 
@@ -27,7 +27,7 @@ return(
                 </label>
             </div>
 
-            <button class="w-100 btn btn-lg btn-primary" type="submit" onClick={FitnessApi.validateLogin()}>Sign in</button>
+            <button class="w-100 btn btn-lg btn-primary" type="submit" onClick={FitnessApi.validateLogin(username, password)}>Sign in</button>
             <p class="mt-5 mb-3 text-muted">©Fitness Tracker 2023</p>
         </form>
     </div>
