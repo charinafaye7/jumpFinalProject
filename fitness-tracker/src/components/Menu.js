@@ -6,10 +6,10 @@ const Menu = () => {
 return(
 
     <div>
-        <h1>
-            MENU
-        </h1>
 
+        <button className="btn btn-danger"><a href="/Add" class="nav-link">Add</a></button>
+
+        <button className="btn btn-danger"><a href="/View" class="nav-link">View</a></button>
 
     </div>
 

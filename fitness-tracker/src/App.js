@@ -19,7 +19,7 @@ function App() {
       <Route path="/" element={ <Home/> } exact />
       <Route path="/login" element={ <Login/> } />
       <Route path="/menu" element={ <Menu/> } />
-      {/* <Route path="/add" element={ <Add/> } /> */}
+      <Route path="/add" element={ <Add/> } />
       <Route path="/view" element={ <View/> } />
 
 

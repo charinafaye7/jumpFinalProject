@@ -1,4 +1,5 @@
 import React from 'react';
+import FitnessApi from '../apis/FitnessApi';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
