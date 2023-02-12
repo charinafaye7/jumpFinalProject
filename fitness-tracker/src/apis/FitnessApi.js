@@ -1,6 +1,5 @@
 const URI = "http://localhost:8080/api/"
-const URIAUTH = "http://localhost:8080/authenticate"
-const URILOGIN = ""
+
 
 const FitnessApi = {
 
@@ -25,6 +24,25 @@ const FitnessApi = {
 
             })
             .catch( (error) => { console.log(error)});
+
+    },
+
+    createSession: (sessionToCreate) => {
+
+        // fetch( uri for request, request object )
+        fetch( URI + "workout", {
+            method: "POST", // type of request
+            headers: { "Content-Type": "application/json" }, // header of request
+            body: JSON.stringify(sessionToCreate) // body of request, convert object to json string
+        } )
+            .then( result => result.json() )
+            .then( data => {
+                console.log("Session Made")
+                console.log(data)
+
+
+            } )
+            .catch( (error) => { console.log(error) } ) 
 
     }
 
