@@ -56,7 +56,7 @@ const FitnessApi = {
         .catch( (error) => { console.log(error) } ) 
         // window.location.reload()
 
-    }
+    },
 
     validateUser: (user) => {
 
