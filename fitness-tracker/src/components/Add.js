@@ -14,11 +14,15 @@ const SessionCreate = () => {
     const handleSubmit = (event) => { // event -> represents the event of submitting the form
 
         const sesh = {
-            "user_id" : user_id,
+            "user": {
+                "user_id": user_id
+            },
             "session_date": session_date,
             "duration": duration,
             "calories": calories,
-            "exercise_id": exercise_id
+            "exercise": {
+                "exercise_id": exercise_id
+            }
         }
 
         // make a POST request here to create the session
