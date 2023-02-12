@@ -58,6 +58,20 @@ const FitnessApi = {
 
     }
 
+    validateUser: (user) => {
+
+        fetch( URI + "authenticate", {
+            method: "POST" ,
+            headers: { "Content-Type": "application/json" }, // header of request
+            body: JSON.stringify(user)
+        } )
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch( (error) => { console.log(error) 
+                             alert("Invalid Username and Password, please try again.")} ) 
+        // window.location.reload()
+    }
+
 
 
 }
