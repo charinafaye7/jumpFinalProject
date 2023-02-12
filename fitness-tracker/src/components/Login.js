@@ -1,9 +1,10 @@
-import React from 'react';
 import FitnessApi from '../apis/FitnessApi';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
 
+    
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
