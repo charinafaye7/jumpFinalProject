@@ -6,7 +6,7 @@ import Login from './components/Login';
 import Menu from './components/Menu';
 import Add from './components/Add';
 import View from './components/View';
-
+import Update from './components/Update';
 
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
       <Route path="/menu" element={ <Menu/> } />
       <Route path="/add" element={ <Add/> } />
       <Route path="/view" element={ <View/> } />
+      <Route path="/update" element={ <Update/> } />
 
 
       </Routes>
