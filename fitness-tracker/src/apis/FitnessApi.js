@@ -44,19 +44,19 @@ const FitnessApi = {
             } )
             .catch( (error) => { console.log(error) } ) 
 
+    },
+
+    deleteSession: (sessionToDelete) => {
+
+        fetch( URI + "workout/" + sessionToDelete.session_id, {
+            method: "DELETE" 
+        } )
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch( (error) => { console.log(error) } ) 
+        // window.location.reload()
+
     }
-
-    // validateLogin : (placer) => {
-
-
-
-    // }
-
-    // fetch ( URI, {
-    //     method: "POST", // type of request
-    //     headers: { "Content-Type": "application/json" }, // header of request
-    //     body: JSON.stringify(productToCreate) // body of request, convert object to json string
-    // } )
 
 
 

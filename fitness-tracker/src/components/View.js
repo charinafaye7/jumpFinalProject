@@ -40,7 +40,7 @@ const SessionView = () => {
                                         <td>{s.session_date}</td>
                                         <td>{s.exercise.exercise_name}</td>
                                         <td>
-                                            <button className="btn btn-danger">
+                                            <button className="btn btn-danger" onClick={()=>FitnessApi.deleteSession(s)}>
                                                 Delete
                                             </button>
                                             <button className='btn btn-primary'>
