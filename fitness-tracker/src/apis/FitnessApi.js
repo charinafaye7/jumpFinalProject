@@ -43,9 +43,7 @@ const FitnessApi = {
 
 
             } )
-            .catch( (error) => { console.log(error) } ) ;
-
-        Response.redirect(URI + "/Menu");
+            .catch( (error) => { console.log(error) } ) 
 
     },
 
@@ -90,7 +88,9 @@ const FitnessApi = {
         .then(response => response.json())
         .then(data => console.log(data))
         .catch( (error) => { console.log(error) 
-                             alert("Invalid Username and Password, please try again.")} ) 
+                             alert("Invalid Username and Password, please try again.")} );
+
+        Response.redirect(URI + "/Menu");
         // window.location.reload()
     },
 
