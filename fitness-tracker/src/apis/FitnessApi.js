@@ -90,7 +90,7 @@ const FitnessApi = {
         .catch( (error) => { console.log(error) 
                              alert("Invalid Username and Password, please try again.")} );
 
-        Response.redirect(URI + "/Menu");
+        Response.redirect("http://localhost:3000/menu" + "/Menu");
         // window.location.reload()
     },
 
