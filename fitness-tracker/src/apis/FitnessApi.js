@@ -1,4 +1,5 @@
 const URI = "http://localhost:8080/api/"
+const URIAUTH = "http://localhost:8080/"
 
 
 const FitnessApi = {
@@ -79,7 +80,7 @@ const FitnessApi = {
 
     validateUser: (user) => {
 
-        fetch( URI + "authenticate", {
+        fetch( URIAUTH + "authenticate", {
             method: "POST" ,
             headers: { "Content-Type": "application/json" }, // header of request
             body: JSON.stringify(user)
