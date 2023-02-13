@@ -1,5 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import Login from './components/Login';
@@ -10,6 +11,9 @@ import Update from './components/Update';
 
 
 function App() {
+
+  const [sessionToUpdate, setSessionToUpdate] = useState();
+
   return (
     <div className="App">
       
@@ -20,8 +24,8 @@ function App() {
       <Route path="/login" element={ <Login/> } />
       <Route path="/menu" element={ <Menu/> } />
       <Route path="/add" element={ <Add/> } />
-      <Route path="/view" element={ <View/> } />
-      <Route path="/update" element={ <Update/> } />
+      <Route path="/view" element={ <View setSessionToUpdate = {setSessionToUpdate}/> } />
+      <Route path="/update" element={ <Update sessionToUpdate =  {sessionToUpdate}/> } />
 
 
       </Routes>

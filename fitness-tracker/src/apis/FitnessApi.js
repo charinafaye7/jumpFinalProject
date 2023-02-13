@@ -70,6 +70,20 @@ const FitnessApi = {
         .catch( (error) => { console.log(error) 
                              alert("Invalid Username and Password, please try again.")} ) 
         // window.location.reload()
+    },
+
+    updateSession: (sessionToUpdate) => {
+        
+        fetch( URI + "/workout/update", {
+            method: "PUT", // type of request
+            headers: { "Content-Type": "application/json" }, // header of request
+            body: JSON.stringify(sessionToUpdate) // body of request, convert object to json string
+        } )
+            .then( async function (result) {
+                const data = await result.json()
+                  
+            })
+            .catch( (error) => { console.log(error) } ) 
     }
 
 

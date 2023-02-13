@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import FitnessApi from '../apis/FitnessApi';
+import { Link } from 'react-router-dom';
 
-const SessionView = () => {
+const SessionView = (props) => {
 
     const [sessionList, setSessionList] = useState([])
+    const [refresh, setRefresh] = useState(false)
 
     useEffect( () => {
         console.log("Hello, this component was mounted!")
@@ -43,9 +45,11 @@ const SessionView = () => {
                                             <button className="btn btn-danger" onClick={()=>FitnessApi.deleteSession(s)}>
                                                 Delete
                                             </button>
-                                            <button className='btn btn-primary'>
-                                                Update
-                                            </button>
+                                            <Link to="/update" onClick={()=> props.setSessionToUpdate(s)}>
+                                                <button className='btn btn-primary'>
+                                                    Update
+                                                </button>
+                                            </Link>
                                         </td>
                                     </tr>
                             )
