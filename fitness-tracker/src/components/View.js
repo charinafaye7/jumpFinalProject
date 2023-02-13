@@ -33,7 +33,8 @@ const SessionView = (props) => {
                 <tbody>
 
                     {
-                        sessionList.map( s =>  
+                        sessionList.filter(s => s.user.user_id === 4) //link filter with login
+                        .map( s =>  
                                     <tr key={s.session_id}>
 
                                         <td>{s.session_id}</td>

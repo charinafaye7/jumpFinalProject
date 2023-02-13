@@ -5,6 +5,8 @@ const SessionCreate = () => {
 
     //const[ name, setName ] = useState("")
 
+    const test = 10
+
     const [user_id, setUser] = useState(0)
     const [session_date, setDate] = useState(0)
     const [duration, setDuration] = useState(0)
@@ -107,7 +109,7 @@ const SessionCreate = () => {
                            id='sesh-cal'
                            required
                            name="sesh-cal"
-                           value={calories}
+                           value={calories}  //Edit here for calorie calc
                            onChange={ (event) => { setCalories(event.target.value) } }
                         />
                 </div>

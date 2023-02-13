@@ -46,6 +46,25 @@ const FitnessApi = {
 
     },
 
+    createUser: (userToCreate) => {
+
+        // fetch( uri for request, request object )
+        fetch( URI + "user", {
+            method: "POST", // type of request
+            headers: { "Content-Type": "application/json" }, // header of request
+            body: JSON.stringify(userToCreate) // body of request, convert object to json string
+        } )
+            .then( result => result.json() )
+            .then( data => {
+                console.log("User Made")
+                console.log(data)
+
+
+            } )
+            .catch( (error) => { console.log(error) } ) 
+
+    },
+
     deleteSession: (sessionToDelete) => {
 
         fetch( URI + "workout/" + sessionToDelete.session_id, {
