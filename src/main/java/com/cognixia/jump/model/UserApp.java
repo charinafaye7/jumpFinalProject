@@ -54,6 +54,20 @@ public class UserApp implements Serializable{
 
 	}
 	
+	
+
+	public UserApp(Integer user_id, String f_name, String l_name, @NotBlank String username,
+			@NotBlank String user_pwd, boolean enabled) {
+		super();
+		this.user_id = user_id;
+		this.f_name = f_name;
+		this.l_name = l_name;
+		this.username = username;
+		this.user_pwd = user_pwd;
+		this.enabled = enabled;
+	}
+
+
 
 	public boolean isEnabled() {
 		return enabled;
@@ -142,6 +156,21 @@ public class UserApp implements Serializable{
 		return "User [id=" + user_id + ", f_name=" + f_name + ", roles=" + roles + ", l_name=" + l_name + ", username=" + username
 				+ ", password=" + user_pwd + ", enabled=" + enabled + "]";
 	}
+
+
+
+	public String toJson() {
+
+		return "{\"id\" : " + user_id 
+				+ ", \"f_name\" : \"" + f_name + "\""
+				+ ", \"l_name\" : \"" + l_name + "\""
+				+ ", \"username\" : \"" + username + "\""
+				+ ", \"password\" : " + user_pwd 
+				+ ", \"enabled\" : \"" + enabled + "\"";
+	}
+
+
+
 
 
 }

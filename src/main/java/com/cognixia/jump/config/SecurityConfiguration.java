@@ -9,13 +9,14 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.cognixia.jump.filter.JwtRequestFilter;
+import com.cognixia.jump.service.MyUserDetailsService;
+import com.cognixia.jump.util.JwtUtil;
 
 @Configuration
 public class SecurityConfiguration {
@@ -23,9 +24,9 @@ public class SecurityConfiguration {
 	@Autowired
 	UserDetailsService userDetailsService;
 	
+	
 	@Autowired
 	JwtRequestFilter jwtRequestFilter;
-
 	
 	// Authentication - who are you?
 	@Bean
