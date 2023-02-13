@@ -1,3 +1,5 @@
+import { Navigate } from "react-router-dom";
+
 const URI = "http://localhost:8080/api/"
 const URIAUTH = "http://localhost:8080/"
 
@@ -86,7 +88,6 @@ const FitnessApi = {
             body: JSON.stringify(user)
         } )
         .then(response => response.json())
-        .then(data => console.log(data))
         .catch( (error) => { console.log(error) 
                              alert("Invalid Username and Password, please try again.")} ) 
         // window.location.reload()

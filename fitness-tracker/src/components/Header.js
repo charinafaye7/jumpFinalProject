@@ -6,18 +6,18 @@ const Header = () => {
 
     return (
 
-        <div class="container">
-            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                    <img src={fitness} class="bi me-2" width="40" height="32"/>
-                    <span class="fs-4">Fitness Tracker</span>
+        <div className="container">
+            <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <img src={fitness} className="bi me-2" width="40" height="32"/>
+                    <span className="fs-4">Fitness Tracker</span>
                 </a>
 
-                <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+                <ul className="nav nav-pills">
+                    <li className="nav-item"><a href="/" className="nav-link active" aria-current="page">Home</a></li>
 
-                    <li class="nav-item"><a href="/Login" class="nav-link">Login</a></li>
-                    <li class="nav-item"><a href="/Signup" class="nav-link">Signup</a></li>
+                    <li className="nav-item"><a href="/Login" className="nav-link">Login</a></li>
+                    <li className="nav-item"><a href="/Signup" className="nav-link">Signup</a></li>
                 </ul>
             </header>
         </div>   

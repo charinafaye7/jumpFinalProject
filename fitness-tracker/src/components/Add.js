@@ -109,7 +109,7 @@ const SessionCreate = () => {
                            id='sesh-cal'
                            required
                            name="sesh-cal"
-                           value={calories}  //Edit here for calorie calc
+                           value={calories}  //Edit here htmlFor calorie calc
                            onChange={ (event) => { setCalories(event.target.value) } }
                         />
                 </div>
