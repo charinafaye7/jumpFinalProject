@@ -80,17 +80,26 @@ const FitnessApi = {
 
     },
 
-    validateUser: (user) => {
+    validateUser: async (user) => {
 
-        fetch( URIAUTH + "authenticate", {
+        var auth = null
+
+        await fetch( URIAUTH + "authenticate", {
             method: "POST" ,
             headers: { "Content-Type": "application/json" }, // header of request
             body: JSON.stringify(user)
         } )
-        .then(response => response.json())
-        .catch( (error) => { console.log(error) 
-                             alert("Invalid Username and Password, please try again.")} ) 
-        // window.location.reload()
+        .then((response) => {return response.json()})
+        .then((data)=> {console.log(data)
+                        auth = data.jwt})
+        .catch( (error) => {console.log(error)
+                            alert("Invalid Username and Password, please try again.")
+                            }) 
+        const obj = {
+            username: user.username,
+            jwt: auth
+        }             
+        return obj
     },
 
     updateSession: (sessionToUpdate) => {

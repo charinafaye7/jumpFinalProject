@@ -1,8 +1,11 @@
 import FitnessApi from '../apis/FitnessApi';
 import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import {  Navigate } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+//import {  Navigate } from 'react-router-dom';
+
+
+
 
 const Login = () => {
 
@@ -10,22 +13,28 @@ const Login = () => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [cred, setCred] = useState("")
 
     const handleSubmit = (event) => { // event -> represents the event of submitting the form
 
         const user = {
             "username" : username,
             "password": password,
-
+            
         }
 
-        // make a POST request here to create the session
+
+
         FitnessApi.validateUser(user)
+        .then((auth)=>{ //hover over to see full object
+            setCred(auth)
+            if(auth.jwt){navigate('/menu')}
+            console.log(auth)
+        })
+        .catch( (error) => {console.log(error)
+            })
 
-        // stop the page from refreshing/reloading when submitting the form
         event.preventDefault()
-
-        navigate('/menu')
     }
 
 return(
@@ -57,7 +66,7 @@ return(
             <button className="w-100 btn btn-lg btn-primary" 
                     type="submit">
                 Sign in</button>
-
+            
             <p className="mt-5 mb-3 text-muted">©Fitness Tracker 2023</p>
 
 
