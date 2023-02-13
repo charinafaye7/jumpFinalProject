@@ -42,6 +42,7 @@ public class SecurityConfiguration {
 		http.csrf().disable()
 			.authorizeRequests()
 			.antMatchers("/api/hello").permitAll()
+			.antMatchers("/authenticate").permitAll()
 			.antMatchers("/api/admin").hasRole("ADMIN")
 			.antMatchers(HttpMethod.GET, "/api/user").hasRole("ADMIN") // don't want just anyone to be able to get all user info
 			.antMatchers("/api/all").permitAll()
