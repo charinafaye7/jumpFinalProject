@@ -17,10 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cognixia.jump.exception.ResourceNotFoundException;
 import com.cognixia.jump.model.WorkoutSession;
 import com.cognixia.jump.repository.WorkoutSessionRepository;
+import com.cognixia.jump.service.WorkoutSessionService;
 
 @RequestMapping("/api")
 @RestController
 public class WorkoutSessionController {
+	
+	@Autowired
+	WorkoutSessionService service;
+	
 	@Autowired
 	WorkoutSessionRepository repo;
 	
@@ -43,29 +48,21 @@ public class WorkoutSessionController {
 	
 	@DeleteMapping("/workout/{id}")
 	public ResponseEntity<?> deleteWorkout(@PathVariable int id) throws ResourceNotFoundException {
+		service.deleteSession(id);
 		
-		Optional<WorkoutSession> found = repo.findById(id);
-		
-		if(found.isEmpty()) {
-			throw new ResourceNotFoundException("Workout session id " + id + " was not found");
-		}
-		
-		repo.deleteById(id);
-		
-		return ResponseEntity.status(200).body(found.get());
+		return ResponseEntity.status(200)
+				 .body("Deleted Session with id = " + id);
 	}
 	
 	@PutMapping("/workout/update")
-	public ResponseEntity<?> updateProduct(@RequestBody WorkoutSession session) throws ResourceNotFoundException {
+	public ResponseEntity<?> updateWorkout(@RequestBody WorkoutSession session) throws ResourceNotFoundException {
 		
-		if(repo.existsById(session.getSession_id())) {
-			
-			WorkoutSession updated = repo.save(session);
-			
-			return ResponseEntity.status(200).body(updated);
-		}
+		WorkoutSession updated = service.updateSession(session);
 		
-		throw new ResourceNotFoundException("Workout session id " + session.getSession_id() + " was not found");
+		return ResponseEntity.status(200)
+				 .body(updated);
+		
+		
 	}
 		
 }

@@ -35,10 +35,35 @@ public class WorkoutSession {
 	@JoinColumn (name = "exercise_id", nullable = false)
 	private Exercise exercise;
 	
+	public WorkoutSession() {
+		
+	}
+	
+	public WorkoutSession(Integer session_id, UserApp user, Date session_date, Time duration, Integer calories,
+			Exercise exercise) {
+		super();
+		this.session_id = session_id;
+		this.user = user;
+		this.session_date = session_date;
+		this.duration = duration;
+		this.calories = calories;
+		this.exercise = exercise;
+	}
+
 	@Override
 	public String toString() {
 		return "WorkoutSession [session_id=" + session_id + ", user=" + user + ", session_date=" + session_date
 				+ ", duration=" + duration + ", calories=" + calories + ", exercise=" + exercise + "]";
+	}
+	
+	public String toJson() {
+
+		return "{\"id\" : " + session_id 
+				+ ", \"user\" : \"" + user + "\""
+				+ ", \"session_date\" : \"" + session_date + "\""
+				+ ", \"duration\" : \"" + duration + "\""
+				+ ", \"calories\" : " + calories 
+				+ ", \"exercise\" : \"" + exercise + "\"";
 	}
 
 	public Integer getSession_id() {
@@ -88,7 +113,6 @@ public class WorkoutSession {
 	public void setExercise(Exercise exercise) {
 		this.exercise = exercise;
 	}
-
 	
 	
 }
