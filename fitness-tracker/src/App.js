@@ -8,7 +8,7 @@ import Menu from './components/Menu';
 import Add from './components/Add';
 import View from './components/View';
 import Update from './components/Update';
-
+import UserCreate from './components/Signup';
 
 function App() {
 
@@ -22,6 +22,7 @@ function App() {
       <Routes>
       <Route path="/" element={ <Home/> } exact />
       <Route path="/login" element={ <Login/> } />
+      <Route path="/signup" element={ <UserCreate/> } />
       <Route path="/menu" element={ <Menu/> } />
       <Route path="/add" element={ <Add/> } />
       <Route path="/view" element={ <View setSessionToUpdate = {setSessionToUpdate}/> } />
