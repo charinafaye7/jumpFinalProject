@@ -1,10 +1,12 @@
 import FitnessApi from '../apis/FitnessApi';
 import React, { useState } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
 
-    
+    const navigate = useNavigate();
+
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
@@ -18,9 +20,11 @@ const Login = () => {
 
         // make a POST request here to create the session
         FitnessApi.validateUser(user)
-
+        
         // stop the page from refreshing/reloading when submitting the form
         event.preventDefault()
+
+        navigate('/menu')
     }
 
 return(
