@@ -1,6 +1,6 @@
 import FitnessApi from '../apis/FitnessApi';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import {  Navigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -17,7 +17,11 @@ const Login = () => {
         }
 
         // make a POST request here to create the session
-        FitnessApi.validateUser(user)
+        if(FitnessApi.validateUser(user)){
+            Navigate("https://google.com")
+        }
+        
+        
 
         // stop the page from refreshing/reloading when submitting the form
         event.preventDefault()
@@ -26,34 +30,34 @@ const Login = () => {
 return(
 
     <div>
-        <form  class="form-signin w-100 m-auto" onSubmit={handleSubmit}>
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        <form  className="form-signin w-100 m-auto" onSubmit={handleSubmit}>
+            <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
-            <div class="form-floating">
+            <div className="form-floating">
                 <input  type="text" 
-                        class="form-control" 
+                        className="form-control" 
                         id="floatingInput" 
                         placeholder="Username"
                         value={username}
                         onChange={ (event) => { setUsername(event.target.value) } }/>
-                <label for="floatingInput">Username</label>
+                <label htmlFor="floatingInput">Username</label>
             </div>
 
-            <div class="form-floating w-100">
+            <div className="form-floating w-100">
                 <input type="password" 
-                       class="form-control" 
+                       className="form-control" 
                        id="floatingPassword" 
                        placeholder="Password"
                        value={password}
                        onChange={ (event) => {setPassword(event.target.value) }}/>
-                <label for="floatingPassword">Password</label>
+                <label htmlFor="floatingPassword">Password</label>
             </div>
 
-            <button class="w-100 btn btn-lg btn-primary" 
+            <button className="w-100 btn btn-lg btn-primary" 
                     type="submit">
                 Sign in</button>
 
-            <p class="mt-5 mb-3 text-muted">©Fitness Tracker 2023</p>
+            <p className="mt-5 mb-3 text-muted">©Fitness Tracker 2023</p>
 
 
         </form>
