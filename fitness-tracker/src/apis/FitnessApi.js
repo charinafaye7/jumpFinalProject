@@ -45,7 +45,7 @@ const FitnessApi = {
             } )
             .catch( (error) => { console.log(error) } ) ;
 
-        Response.redirect(URI + "/Home");
+        Response.redirect(URI + "/Menu");
 
     },
 
