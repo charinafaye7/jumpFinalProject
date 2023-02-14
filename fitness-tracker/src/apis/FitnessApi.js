@@ -1,9 +1,9 @@
 
-const URI = "http://54.185.0.170:8080/api/"
-const URIAUTH = "http://54.185.0.170:8080/"
+// const URI = "http://54.185.0.170:8080/api/"
+// const URIAUTH = "http://54.185.0.170:8080/"
 
-// const URI = "http://localhost:8080/api/"
-// const URIAUTH = "http://localhost:8080/"
+const URI = "http://localhost:8080/api/"
+const URIAUTH = "http://localhost:8080/"
 
 
 const FitnessApi = {
