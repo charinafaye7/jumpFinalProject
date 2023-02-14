@@ -1,7 +1,9 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const URI = "http://localhost:8080/api/"
 const URIAUTH = "http://localhost:8080/"
+
+const navigate = useNavigate();
 
 
 const FitnessApi = {
@@ -87,9 +89,12 @@ const FitnessApi = {
             headers: { "Content-Type": "application/json" }, // header of request
             body: JSON.stringify(user)
         } )
-        .then(response => response.json())
+        .then( (response) => {response.json()})
         .catch( (error) => { console.log(error) 
                              alert("Invalid Username and Password, please try again.")} ) 
+        .finally(() => {
+            navigate('/menu')
+        })
         // window.location.reload()
     },
 

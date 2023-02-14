@@ -18,14 +18,17 @@ const Login = () => {
             "password": password,
 
         }
-
+        console.log(FitnessApi.validateUser(user))
         // make a POST request here to create the session
-        FitnessApi.validateUser(user)
+        if (FitnessApi.validateUser(user)){
+            navigate('/menu')
+        }
+        // FitnessApi.validateUser(user)
 
         // stop the page from refreshing/reloading when submitting the form
         event.preventDefault()
 
-        navigate('/menu')
+        // navigate('/menu')
     }
 
 return(
