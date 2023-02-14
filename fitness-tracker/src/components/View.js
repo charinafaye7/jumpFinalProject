@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import FitnessApi from '../apis/FitnessApi';
+import Login from './Login';
 import { Link } from 'react-router-dom';
 
 const SessionView = (props) => {
 
+    
+    const num = 15
     const [sessionList, setSessionList] = useState([])
     //const [refresh, setRefresh] = useState(false)
 
@@ -24,6 +27,7 @@ const SessionView = (props) => {
                 <thead>
                     <tr>
                         <th>Session Id</th>
+                        {/* <th>User Id</th> */}
                         <th>Calories</th>
                         <th>Duration</th>
                         <th>Session Date</th>
@@ -32,25 +36,25 @@ const SessionView = (props) => {
                 </thead>
                 <tbody>
 
-                    {
-                        sessionList.filter(s => s.user.user_id === 4) //link filter with login
-                        .map( s =>  
+                    { //.filter(s => s.user.user_id === 15) //link filter with login
+                        sessionList.map( s =>  
                                     <tr key={s.session_id}>
 
                                         <td>{s.session_id}</td>
+                                        {/* <td>{s.user.user_id}</td> */}
                                         <td>{s.calories}</td>
                                         <td>{s.duration}</td>
-                                        <td>{s.session_date}</td>
+                                        {/* <td>{s.session_date}</td> */}
                                         <td>{s.exercise.exercise_name}</td>
                                         <td>
                                             <button className="btn btn-danger" onClick={()=>FitnessApi.deleteSession(s)}>
                                                 Delete
                                             </button>
-                                            <Link to="/update" onClick={()=> props.setSessionToUpdate(s)}>
+                                            {/* <Link to="/update" onClick={()=> props.setSessionToUpdate(s)}>
                                                 <button className='btn btn-primary'>
                                                     Update
                                                 </button>
-                                            </Link>
+                                            </Link> */}
                                         </td>
                                     </tr>
                             )

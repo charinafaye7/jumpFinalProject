@@ -1,7 +1,10 @@
 import { Navigate } from "react-router-dom";
 
-const URI = "http://localhost:8080/api/"
-const URIAUTH = "http://localhost:8080/"
+const URI = "http://54.185.0.170:8080/api/"
+const URIAUTH = "http://54.185.0.170:8080/"
+
+// const URI = "http://localhost:8080/api/"
+// const URIAUTH = "http://localhost:8080/"
 
 
 const FitnessApi = {
@@ -42,40 +45,27 @@ const FitnessApi = {
 
     },
 
-    createUser: (userToCreate) => {
+    createUser: async (userToCreate) => {
+
+        var userId = null
 
         // fetch( uri for request, request object )
-        fetch( URI + "user", {
+        await fetch( URI + "user", {
             method: "POST", // type of request
             headers: { "Content-Type": "application/json" }, // header of request
             body: JSON.stringify(userToCreate) // body of request, convert object to json string
         } )
-            .then( result => result.json() )
-            .then( data => {
-                console.log("User Made")
-                console.log(data)
-
-
-            } )
-            .catch( (error) => { console.log(error) } ) 
+                .then((response) => {return response.json()})
+                .then((data)=> {console.log(data)
+                                userId = data.user_id})
+                .catch( (error) => {console.log(error)
+                })
 
             const obj = {
-                userId : userToCreate.user_id
+                viewId : userToCreate.user_id
             }
-            console.log(obj.userId)
+            console.log(obj.viewId)
             return obj
-    },
-
-    deleteSession: (sessionToDelete) => {
-
-        fetch( URI + "workout/" + sessionToDelete.session_id, {
-            method: "DELETE" 
-        } )
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch( (error) => { console.log(error) } ) 
-        window.location.reload()
-
     },
 
     validateUser: async (user) => {
@@ -99,6 +89,21 @@ const FitnessApi = {
         }             
         return obj
     },
+
+
+
+    deleteSession: (sessionToDelete) => {
+
+        fetch( URI + "workout/" + sessionToDelete.session_id, {
+            method: "DELETE" 
+        } )
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch( (error) => { console.log(error) } ) 
+        window.location.reload()
+
+    },
+
 
     updateSession: (sessionToUpdate) => {
         
