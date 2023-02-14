@@ -1,5 +1,5 @@
-package com.cognixia.jump.controller;
-
+//package com.cognixia.jump.controller;
+//
 //import static org.mockito.Mockito.times;
 //import static org.mockito.Mockito.verify;
 //import static org.mockito.Mockito.verifyNoMoreInteractions;
@@ -29,13 +29,13 @@ package com.cognixia.jump.controller;
 //import com.cognixia.jump.repository.UserAppRepository;
 //import com.cognixia.jump.service.MyUserDetailsService;
 //import com.cognixia.jump.util.JwtUtil;
-
-
-//@WebMvcTest(UserAppController.class)
-//@AutoConfigureMockMvc(addFilters = false)
+//
+//
+////@WebMvcTest(UserAppController.class)
+////@AutoConfigureMockMvc(addFilters = false)
 //@WebMvcTest(controllers = UserAppController.class, excludeAutoConfiguration = {SecurityAutoConfiguration.class})
-public class UserAppControllerTest {
-	
+//public class UserAppControllerTest {
+//	
 //	private static final String STARTING_URI = "http://localhost:8080/api";
 //	
 //	public static enum Role {
@@ -135,3 +135,65 @@ public class UserAppControllerTest {
 
 
 
+////	@Test
+////	public void testGetUsers() throws Exception {
+////		
+////		String uri = STARTING_URI + "/users";
+////		
+////		List<UserApp> allUsers = new ArrayList<UserApp>();
+////		// init the users later
+////		allUsers.add(new UserApp(1, "ayden", "abad", "ayden333", "123", true));
+////		allUsers.add(new UserApp(2, "charina", "abapo", "cabapo", "123", true));
+////		
+////		when( repo.findAll() ).thenReturn(allUsers);
+////		
+////		mvc.perform( get(uri) )   // perform get request
+////		.andDo( print() ) // print request sent/response given
+////		.andExpect( status().isOk() ) // expect a 200 status code
+////		.andExpect( content().contentType( MediaType.APPLICATION_JSON_VALUE ) ) // checks content type is json
+////		.andExpect( jsonPath( "$.length()" ).value( allUsers.size() ) ); // length of the list matches one above
+////		
+////		verify( repo, times(1) ).findAll(); // getStudents() from service called once
+////		verifyNoMoreInteractions( repo ); // after checking above, service is no longer called
+////		
+////	}
+////	
+////	@Test
+////	public void testPostUser() throws Exception {
+////		
+////		String uri = STARTING_URI + "/user";
+////		
+////		UserApp user = new UserApp(1, "ayden", "abad", "ayden333", "123", true);
+////		
+////		when( repo.save( Mockito.any(UserApp.class) ) ).thenReturn(user);
+////		
+////		mvc.perform( post(uri)
+////				.content( user.toJson() ) // data sent in body NEEDS to be in JSON format
+////				.contentType(MediaType.APPLICATION_JSON_VALUE) )
+////		.andDo( print() )
+////		.andExpect( status().isCreated() )
+////		.andExpect( content().contentType( MediaType.APPLICATION_JSON_VALUE ) );
+////		
+////	}
+//	
+//	
+//	
+//}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
