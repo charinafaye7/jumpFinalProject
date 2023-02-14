@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const SessionView = (props) => {
 
     
-    const num = 15
+    
     const [sessionList, setSessionList] = useState([])
     //const [refresh, setRefresh] = useState(false)
 
