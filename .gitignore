@@ -1,5 +1,5 @@
 fitness-tracker/node_modules/**
+target/
 .DS_Store
 .gitignore.rtf
 package-lock.json
-target/
