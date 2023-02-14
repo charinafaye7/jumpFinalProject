@@ -2,3 +2,4 @@ fitness-tracker/node_modules/**
 .DS_Store
 .gitignore.rtf
 package-lock.json
+target/
