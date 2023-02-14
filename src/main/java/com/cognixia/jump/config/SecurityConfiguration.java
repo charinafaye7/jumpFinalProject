@@ -41,8 +41,7 @@ public class SecurityConfiguration {
 		
 		http.csrf().disable()
 			.authorizeRequests()
-			.antMatchers("/v3/api-docs").permitAll()
-			.antMatchers("/openapi.html").permitAll()
+			.antMatchers("/api/hello").permitAll()
 			.antMatchers("/api/admin").hasRole("ADMIN")
 			.antMatchers(HttpMethod.GET, "/api/user").hasRole("ADMIN") // don't want just anyone to be able to get all user info
 			.antMatchers("/api/all").permitAll()
@@ -89,4 +88,9 @@ public class SecurityConfiguration {
 		protected AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
 			return authConfig.getAuthenticationManager();
 		}
+
+
+
+
+
 }

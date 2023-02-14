@@ -35,7 +35,9 @@ public class UserApp implements Serializable{
 	@Enumerated(EnumType.STRING)
 	@Column( nullable = false )
 	private Role roles;
-		
+	
+	
+	
 	// unique and not null
 	@Column( unique = true, nullable = false )
 	@NotBlank
@@ -52,6 +54,8 @@ public class UserApp implements Serializable{
 
 	}
 	
+	
+
 	public UserApp(Integer user_id, String f_name, String l_name, @NotBlank String username,
 			@NotBlank String user_pwd, boolean enabled) {
 		super();
@@ -63,9 +67,12 @@ public class UserApp implements Serializable{
 		this.enabled = enabled;
 	}
 
+
+
 	public boolean isEnabled() {
 		return enabled;
 	}
+
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
@@ -76,55 +83,81 @@ public class UserApp implements Serializable{
 		return user_id;
 	}
 
+
+
 	public void setUser_id(Integer user_id) {
 		this.user_id = user_id;
 	}
+
+
 
 	public String getF_name() {
 		return f_name;
 	}
 
+
+
 	public void setF_name(String f_name) {
 		this.f_name = f_name;
 	}
+
+
 
 	public String getL_name() {
 		return l_name;
 	}
 
+
+
 	public void setL_name(String l_name) {
 		this.l_name = l_name;
 	}
+
+
 
 	public Role getRoles() {
 		return roles;
 	}
 
+
+
 	public void setRoles(Role roles) {
 		this.roles = roles;
 	}
+
+
 
 	public String getUsername() {
 		return username;
 	}
 
+
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
+
 
 	public String getUser_pwd() {
 		return user_pwd;
 	}
 
+
+
 	public void setUser_pwd(String user_pwd) {
 		this.user_pwd = user_pwd;
 	}
+
+
 
 	@Override
 	public String toString() {
 		return "User [id=" + user_id + ", f_name=" + f_name + ", roles=" + roles + ", l_name=" + l_name + ", username=" + username
 				+ ", password=" + user_pwd + ", enabled=" + enabled + "]";
 	}
+
+
 
 	public String toJson() {
 
@@ -135,4 +168,9 @@ public class UserApp implements Serializable{
 				+ ", \"password\" : " + user_pwd 
 				+ ", \"enabled\" : \"" + enabled + "\"";
 	}
+
+
+
+
+
 }
