@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class UserApp implements Serializable{
@@ -20,13 +22,18 @@ public class UserApp implements Serializable{
 		ROLE_USER, ROLE_ADMIN	// roles should start with capital ROLE_ and has to be completely in capital letters
 	}
 	
+	@NotNull
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer user_id;
 	
+	@NotNull
+	@NotEmpty
 	@Column( nullable = false )
 	private String f_name;
 	
+	@NotNull
+	@NotEmpty
 	@Column( nullable = false )
 	private String l_name;
 	
@@ -37,10 +44,14 @@ public class UserApp implements Serializable{
 	private Role roles;
 		
 	// unique and not null
+	@NotNull
+	@NotEmpty
 	@Column( unique = true, nullable = false )
 	@NotBlank
 	private String username;
 	
+	@NotNull
+	@NotEmpty
 	@Column( nullable = false )
 	@NotBlank
 	private String user_pwd;
