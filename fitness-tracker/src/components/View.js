@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const SessionView = (props) => {
 
     const [sessionList, setSessionList] = useState([])
-    const [refresh, setRefresh] = useState(false)
+    //const [refresh, setRefresh] = useState(false)
 
     useEffect( () => {
         console.log("Hello, this component was mounted!")

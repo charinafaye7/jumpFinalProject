@@ -12,21 +12,14 @@ const FitnessApi = {
 
         fetch( URI + "workout")
             .then( (result) => {
-
                 console.log("Result")
                 console.log(result)
-
                 return result.json()
-
             })
-
             .then( (data) =>{
-
                 console.log("Data:") //Small change
                 console.log(data)
-
                 setSessionList(data)
-
             })
             .catch( (error) => { console.log(error)});
 
@@ -68,6 +61,11 @@ const FitnessApi = {
             } )
             .catch( (error) => { console.log(error) } ) 
 
+            const obj = {
+                userId : userToCreate.user_id
+            }
+            console.log(obj.userId)
+            return obj
     },
 
     deleteSession: (sessionToDelete) => {
@@ -78,17 +76,20 @@ const FitnessApi = {
         .then(response => response.json())
         .then(data => console.log(data))
         .catch( (error) => { console.log(error) } ) 
-        // window.location.reload()
+        window.location.reload()
 
     },
 
-    validateUser: (user) => {
+    validateUser: async (user) => {
 
-        fetch( URIAUTH + "authenticate", {
+        var auth = null
+
+        await fetch( URIAUTH + "authenticate", {
             method: "POST" ,
             headers: { "Content-Type": "application/json" }, // header of request
             body: JSON.stringify(user)
         } )
+<<<<<<< HEAD
         .then( (response) => {response.json()})
         .catch( (error) => { console.log(error) 
                              alert("Invalid Username and Password, please try again.")} ) 
@@ -96,6 +97,19 @@ const FitnessApi = {
             navigate('/menu')
         })
         // window.location.reload()
+=======
+        .then((response) => {return response.json()})
+        .then((data)=> {console.log(data)
+                        auth = data.jwt})
+        .catch( (error) => {console.log(error)
+                            alert("Invalid Username and Password, please try again.")
+                            }) 
+        const obj = {
+            username: user.username,
+            jwt: auth
+        }             
+        return obj
+>>>>>>> 0619ec0d8eb6f4343fa882b98cf87e9586887b4d
     },
 
     updateSession: (sessionToUpdate) => {

@@ -4,9 +4,7 @@ import FitnessApi from '../apis/FitnessApi';
 const SessionCreate = () => {
 
     //const[ name, setName ] = useState("")
-
-    const test = 10
-
+    
     const [user_id, setUser] = useState(0)
     const [session_date, setDate] = useState(0)
     const [duration, setDuration] = useState(0)

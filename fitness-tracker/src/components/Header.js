@@ -15,9 +15,9 @@ const Header = () => {
 
                 <ul className="nav nav-pills">
                     <li className="nav-item"><a href="/" className="nav-link active" aria-current="page">Home</a></li>
-
-                    <li className="nav-item"><a href="/Login" className="nav-link">Login</a></li>
-                    <li className="nav-item"><a href="/Signup" className="nav-link">Signup</a></li>
+                    
+                    <li id='nav1' className="nav-item"><a href="/Login" className="nav-link">Login</a></li>
+                    <li id='nav2' className="nav-item2"><a href="/Signup" className="nav-link">Signup</a></li>
                 </ul>
             </header>
         </div>   

@@ -9,7 +9,7 @@ const UserCreate = () => {
     const [roles, setRoles] = useState("")
     const [username, setUserName] = useState("")
     const [user_pwd, setPwd] = useState("")
-    const [enabled, setEnab] = useState("")
+    // const [enabled, setEnab] = useState("")
 
     const handleSubmit = (event) => { // event -> represents the event of submitting the form
 
@@ -23,6 +23,7 @@ const UserCreate = () => {
         }
 
         FitnessApi.createUser(user)
+        // console.log
         event.preventDefault();
 
 
