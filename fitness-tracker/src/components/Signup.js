@@ -23,6 +23,7 @@ const UserCreate = () => {
         }
 
         FitnessApi.createUser(user)
+        // console.log
         event.preventDefault();
 
 

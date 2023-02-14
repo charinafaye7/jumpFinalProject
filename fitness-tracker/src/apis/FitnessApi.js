@@ -59,6 +59,11 @@ const FitnessApi = {
             } )
             .catch( (error) => { console.log(error) } ) 
 
+            const obj = {
+                userId : userToCreate.user_id
+            }
+            console.log(obj.userId)
+            return obj
     },
 
     deleteSession: (sessionToDelete) => {
