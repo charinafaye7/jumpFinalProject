@@ -1,4 +1,3 @@
-import { Navigate } from "react-router-dom";
 
 const URI = "http://localhost:8080/api/"
 const URIAUTH = "http://localhost:8080/"
@@ -87,17 +86,10 @@ const FitnessApi = {
             headers: { "Content-Type": "application/json" }, // header of request
             body: JSON.stringify(user)
         } )
-        .then((response) => {return response.json()})
-        .then((data)=> {console.log(data)
-                        auth = data.jwt})
-        .catch( (error) => {console.log(error)
-                            alert("Invalid Username and Password, please try again.")
-                            }) 
-        const obj = {
-            username: user.username,
-            jwt: auth
-        }             
-        return obj
+        .then( (response) => {response.json()})
+        .catch( (error) => { console.log(error) 
+                             alert("Invalid Username and Password, please try again.")} ) 
+        // window.location.reload()
     },
 
     updateSession: (sessionToUpdate) => {
