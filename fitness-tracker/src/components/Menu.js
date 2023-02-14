@@ -7,13 +7,22 @@ return(
 
     <div>
 
-        <button className="btn btn-danger"><a href="/Add" class="nav-link">Add</a></button>
+        <body onload="myFunction()">
 
+        <button className="btn btn-danger"><a href="/Add" class="nav-link">Add</a></button>
+        <br></br>
         <button className="btn btn-danger"><a href="/View" class="nav-link">View</a></button>
 
+
+        <script>
+        function myFunction() {document.getElementById("nav1").innerHTML = ""}
+        //function myFunction() {document.getElementById("nav2").innerHTML = ""}
+
+        </script>
+        </body>
     </div>
 
-
+    
 )
 
 

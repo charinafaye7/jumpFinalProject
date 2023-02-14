@@ -10,21 +10,14 @@ const FitnessApi = {
 
         fetch( URI + "workout")
             .then( (result) => {
-
                 console.log("Result")
                 console.log(result)
-
                 return result.json()
-
             })
-
             .then( (data) =>{
-
                 console.log("Data:") //Small change
                 console.log(data)
-
                 setSessionList(data)
-
             })
             .catch( (error) => { console.log(error)});
 
@@ -76,7 +69,7 @@ const FitnessApi = {
         .then(response => response.json())
         .then(data => console.log(data))
         .catch( (error) => { console.log(error) } ) 
-        // window.location.reload()
+        window.location.reload()
 
     },
 
