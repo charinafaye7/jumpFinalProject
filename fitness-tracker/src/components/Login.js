@@ -32,7 +32,7 @@ const Login = () => {
             console.log(auth)
         })
         .catch( (error) => {console.log(error)
-            })
+            })  
 
         event.preventDefault()
     }

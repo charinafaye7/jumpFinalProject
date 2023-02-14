@@ -84,7 +84,7 @@ const SessionCreate = () => {
                         />
                 </div>
 
-                <div className='mb-3'>
+                {/* <div className='mb-3'>
                     <label htmlFor='sesh-date' className='form-label' >
                         Date
                     </label>
@@ -96,7 +96,7 @@ const SessionCreate = () => {
                            value={session_date}
                            onChange={ (event) => { setDate(event.target.value) } }
                         />
-                </div>
+                </div> */}
 
                 <div className='mb-3'>
                     <label htmlFor='sesh-cal' className='form-label' >

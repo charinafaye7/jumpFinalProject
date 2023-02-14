@@ -20,56 +20,56 @@ public class MyUserDetails implements UserDetails{
 	private boolean enabled;
 	private List<GrantedAuthority> authorities;
 	
-	// when a new object created, will extract only the RELEVANT info from our User
-	// object
-	public MyUserDetails(UserApp user) {
-		this.username = user.getUsername();
-		this.password = user.getUser_pwd();
-		this.enabled = user.isEnabled();
+	// when a new object created, will extract only the RELEVANT info from our User object
+		public MyUserDetails(UserApp user) {
+			this.username = user.getUsername();
+			this.password = user.getUser_pwd();
+			this.enabled = user.isEnabled();
+			
+			// Granted Authority -> permissions/grants a user has access to retrieve or operations to perform
+			// GA is given based on the user's roles
+			this.authorities = Arrays.asList( new SimpleGrantedAuthority( user.getRoles().name() ) );
+		
+			
+		}
+		
+		@Override
+		public Collection<? extends GrantedAuthority> getAuthorities() {
+			return authorities;
+		}
 
-		// Granted Authority -> permissions/grants a user has access to retrieve or
-		// operations to perform
-		// GA is given based on the user's roles
-		this.authorities = Arrays.asList(new SimpleGrantedAuthority(user.getRoles().name()));
-	}
+		@Override
+		public String getPassword() {
+			return password;
+		}
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return authorities;
-	}
+		@Override
+		public String getUsername() {
+			return username;
+		}
+		
+		// all methods after here:
+		// - DON'T NEED to store this type of info in the user table
+		// - store this info if worthwhile for your security 
+		// - have all these methods return true manually if not storing the info
+		
+		@Override
+		public boolean isAccountNonExpired() {
+			return true;
+		}
 
-	@Override
-	public String getPassword() {
-		return password;
-	}
+		@Override
+		public boolean isAccountNonLocked() {
+			return true;
+		}
 
-	@Override
-	public String getUsername() {
-		return username;
-	}
+		@Override
+		public boolean isCredentialsNonExpired() {
+			return true;
+		}
 
-	// all methods after here:
-	// - DON'T NEED to store this type of info in the user table
-	// - store this info if worthwhile for your security
-	// - have all these methods return true manually if not storing the info
-
-	@Override
-	public boolean isAccountNonExpired() {
-		return true;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		return true;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return true;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		return enabled;
-	}
+		@Override
+		public boolean isEnabled() {
+			return enabled;
+		}
 }
